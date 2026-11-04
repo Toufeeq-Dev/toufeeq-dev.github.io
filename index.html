@@ -660,6 +660,170 @@ nav a:hover {
     font-size: 10px;
   }
 }
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card h3 {
+  min-height: 38px;
+}
+
+.product-card p {
+  min-height: 38px;
+}
+
+.product-btn {
+  margin-top: auto;
+  margin-left: 15px;
+  margin-right: 15px;
+  text-align: center;
+  flex-shrink: 0;
+  }
+  
+/* ===== MSH SIGNATURE PRODUCT DESIGN ===== */
+
+.product-grid {
+  align-items: stretch;
+  gap: 22px;
+}
+
+.product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: 0 0 20px;
+  background: linear-gradient(145deg, #171717, #090909);
+  border: 1px solid #303030;
+  border-radius: 4px;
+  transition: .4s ease;
+}
+
+.product-card::before {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 6px 9px;
+  color: #c9a44c;
+  background: rgba(5,5,5,.85);
+  border: 1px solid rgba(201,164,76,.5);
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.product-card:nth-child(1)::before {
+  content: "01 / SELECTED";
+}
+
+.product-card:nth-child(2)::before {
+  content: "02 / SELECTED";
+}
+
+.product-card:nth-child(3)::before {
+  content: "03 / SELECTED";
+}
+
+.product-card:nth-child(4)::before {
+  content: "04 / SELECTED";
+}
+
+.product-card img {
+  width: 100%;
+  height: 245px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 1px solid #292929;
+  transition: transform .6s ease;
+}
+
+.product-card:hover {
+  border-color: #c9a44c;
+  box-shadow: 0 12px 35px rgba(201,164,76,.12);
+  transform: translateY(-5px);
+}
+
+.product-card:hover img {
+  transform: scale(1.06);
+}
+
+.product-category {
+  margin: 18px 15px 0;
+  color: #c9a44c;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.product-card h3 {
+  min-height: 42px;
+  margin: 10px 15px;
+  color: #f5f5f5;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.product-card p {
+  min-height: 42px;
+  margin: 0 15px;
+  color: #999;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.product-btn {
+  margin: auto 15px 0;
+  padding: 14px 8px;
+  background: #c9a44c;
+  color: #080808;
+  text-align: center;
+  font-size: 10px;
+  letter-spacing: 2px;
+  border: 1px solid #c9a44c;
+  transition: .3s ease;
+}
+
+.product-btn:hover {
+  background: transparent;
+  color: #c9a44c;
+}
+
+@media(max-width:768px) {
+  .product-grid {
+    gap: 13px;
+  }
+
+  .product-card img {
+    height: 175px;
+  }
+
+  .product-card h3 {
+    font-size: 12px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .product-card p {
+    font-size: 11px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .product-category {
+    margin-left: 10px;
+    font-size: 8px;
+  }
+
+  .product-btn {
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 9px;
+  }
+  }
   
 </style>
 </head>
