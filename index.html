@@ -423,6 +423,125 @@ nav a:hover {
     grid-column: 1 / -1;
   }
 }
+ 
+/* ===== PREMIUM DESIGN UPGRADE ===== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(8, 8, 8, 0.96);
+  backdrop-filter: blur(12px);
+}
+
+/* Hero animation */
+.hero-content {
+  animation: heroReveal 1s ease-out;
+}
+
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Premium buttons */
+.hero-btn,
+.product-btn {
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover,
+.product-btn:hover {
+  background: #ffffff;
+  color: #080808;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(201, 164, 76, 0.2);
+}
+
+/* Collection cards */
+.collection-card {
+  background-size: 100%;
+  transition: background-size 0.5s ease;
+}
+
+.collection-card:hover {
+  background-size: 110%;
+  opacity: 1;
+}
+
+.collection-card div {
+  transition: transform 0.3s ease;
+}
+
+.collection-card:hover div {
+  transform: translateY(-8px);
+}
+
+/* Product cards */
+.product-card {
+  overflow: hidden;
+  transition: all 0.35s ease;
+}
+
+.product-card img {
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.06);
+}
+
+/* Section headings */
+.section-heading h2 {
+  position: relative;
+  display: inline-block;
+  padding-bottom: 14px;
+}
+
+.section-heading h2::after {
+  content: "";
+  position: absolute;
+  width: 55px;
+  height: 2px;
+  background: #c9a44c;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Navigation */
+nav a {
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #c9a44c;
+}
+
+/* Mobile improvements */
+@media (max-width: 768px) {
+  .hero {
+    background-position: 62% center;
+  }
+
+  .collection-card:hover {
+    background-size: cover;
+  }
+
+  .product-card:hover {
+    transform: none;
+  }
+    }
   
 </style>
 </head>
