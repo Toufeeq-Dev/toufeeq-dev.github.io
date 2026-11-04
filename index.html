@@ -894,6 +894,34 @@ nav a:hover {
   background: #c9a44c;
   color: #000;
 }
+
+/* INDEPENDENT SEE MORE FIX */
+
+.product-card {
+  height: auto;
+}
+
+.product-card p.product-description {
+  display: none !important;
+  min-height: 0 !important;
+}
+
+.product-card p.product-description.show {
+  display: block !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+.see-more-btn {
+  display: block;
+  align-self: center;
+  margin: 10px auto;
+  background: transparent;
+  border: none;
+  color: #c9a44c;
+  font-size: 10px;
+  cursor: pointer;
+}
 </style>
 </head>
 
@@ -1201,16 +1229,13 @@ document.querySelectorAll(".product-card").forEach(card => {
   description.classList.add("product-description");
 
   const button = document.createElement("button");
+  button.type = "button";
   button.className = "see-more-btn";
   button.textContent = "SEE MORE +";
 
-  button.addEventListener("click", function() {
-    description.classList.toggle("show");
-
-    button.textContent =
-      description.classList.contains("show")
-        ? "SEE LESS −"
-        : "SEE MORE +";
+  button.addEventListener("click", () => {
+    const isOpen = description.classList.toggle("show");
+    button.textContent = isOpen ? "SEE LESS −" : "SEE MORE +";
   });
 
   description.after(button);
