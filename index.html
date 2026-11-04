@@ -1,144 +1,227 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Men's Style Hub | Menswear</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Men's Style Hub | Menswear</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      background: #080808;
-      color: #fff;
-      font-family: Arial, sans-serif;
-    }
+body {
+  background: #080808;
+  color: white;
+  font-family: Arial, sans-serif;
+}
 
-    header {
-      background: #080808;
-      border-bottom: 1px solid #292929;
-      padding: 20px 6%;
-    }
+header {
+  padding: 18px 6%;
+  border-bottom: 1px solid #292929;
+}
 
-    .header-container {
-      max-width: 1300px;
-      margin: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
+.header-container {
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-    .logo {
-      text-align: center;
-      text-decoration: none;
-    }
+.logo {
+  text-align: center;
+  text-decoration: none;
+}
 
-    .logo h1 {
-      color: #c9a44c;
-      font-size: 30px;
-      letter-spacing: 4px;
-    }
+.logo h1 {
+  color: #c9a44c;
+  font-size: 30px;
+  letter-spacing: 4px;
+}
 
-    .logo p {
-      color: #fff;
-      font-size: 13px;
-      letter-spacing: 2px;
-      margin-top: 4px;
-    }
+.logo p {
+  color: white;
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin-top: 4px;
+}
 
-    .logo span {
-      display: block;
-      color: #c9a44c;
-      font-size: 10px;
-      letter-spacing: 5px;
-      margin-top: 5px;
-    }
+.logo span {
+  display: block;
+  color: #c9a44c;
+  font-size: 10px;
+  letter-spacing: 5px;
+  margin-top: 5px;
+}
 
-    nav {
-      display: flex;
-      gap: 28px;
-    }
+nav {
+  display: flex;
+  gap: 25px;
+}
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: 1px;
-      transition: 0.3s;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
 
-    nav a:hover {
-      color: #c9a44c;
-    }
+nav a:hover {
+  color: #c9a44c;
+}
 
-    .menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: #c9a44c;
-      font-size: 27px;
-      cursor: pointer;
-    }
+.menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  color: #c9a44c;
+  font-size: 27px;
+}
 
-    @media (max-width: 768px) {
-      .header-container {
-        flex-wrap: wrap;
-      }
+.hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  padding: 70px 8%;
+  background:
+    linear-gradient(90deg, #080808 5%, rgba(8,8,8,.85) 40%, rgba(8,8,8,.15)),
+    url("https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1800&q=85");
+  background-size: cover;
+  background-position: center;
+}
 
-      .menu-btn {
-        display: block;
-      }
+.hero-content {
+  max-width: 600px;
+}
 
-      nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        gap: 22px;
-        padding-top: 25px;
-      }
+.hero small {
+  color: #c9a44c;
+  letter-spacing: 5px;
+  font-size: 12px;
+}
 
-      nav.active {
-        display: flex;
-      }
-    }
-  </style>
+.hero h2 {
+  font-size: clamp(42px, 7vw, 76px);
+  line-height: 1.1;
+  margin: 22px 0;
+  letter-spacing: 2px;
+}
+
+.hero h2 span {
+  color: #c9a44c;
+}
+
+.hero p {
+  color: #cccccc;
+  line-height: 1.8;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.hero-btn {
+  display: inline-block;
+  background: #c9a44c;
+  color: #080808;
+  padding: 15px 28px;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero-btn:hover {
+  background: white;
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 15px 5%;
+  }
+
+  .menu-btn {
+    display: block;
+    cursor: pointer;
+  }
+
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
+    padding-top: 25px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .header-container {
+    flex-wrap: wrap;
+  }
+
+  .hero {
+    min-height: 530px;
+    padding: 50px 7%;
+    background-position: 60% center;
+  }
+
+  .hero p {
+    max-width: 310px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <div class="header-container">
+<header>
+  <div class="header-container">
 
-      <a href="#" class="logo">
-        <h1>MSH</h1>
-        <p>MEN'S STYLE HUB</p>
-        <span>MENSWEAR</span>
-      </a>
+    <a href="#" class="logo">
+      <h1>MSH</h1>
+      <p>MEN'S STYLE HUB</p>
+      <span>MENSWEAR</span>
+    </a>
 
-      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-      <nav id="navbar">
-        <a href="#">HOME</a>
-        <a href="#">CASUAL</a>
-        <a href="#">FORMAL</a>
-        <a href="#">SHOES</a>
-        <a href="#">ACCESSORIES</a>
-        <a href="#">GROOMING</a>
-      </nav>
+    <nav id="navbar">
+      <a href="#">HOME</a>
+      <a href="#">CASUAL</a>
+      <a href="#">FORMAL</a>
+      <a href="#">SHOES</a>
+      <a href="#">ACCESSORIES</a>
+      <a href="#">GROOMING</a>
+    </nav>
 
-    </div>
-  </header>
+  </div>
+</header>
 
-  <script>
-    function toggleMenu() {
-      document.getElementById("navbar").classList.toggle("active");
-    }
-  </script>
+<section class="hero">
+  <div class="hero-content">
+    <small>THE MEN'S COLLECTION</small>
+
+    <h2>DEFINE<br>YOUR <span>STYLE.</span></h2>
+
+    <p>
+      Discover modern menswear, timeless essentials
+      and accessories designed for every occasion.
+    </p>
+
+    <a href="#collections" class="hero-btn">
+      EXPLORE COLLECTION
+    </a>
+  </div>
+</section>
+
+<script>
+function toggleMenu() {
+  document.getElementById("navbar").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
