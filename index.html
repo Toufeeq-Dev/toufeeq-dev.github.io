@@ -1186,7 +1186,6 @@ nav a:hover {
 
   
 <script>
-
 function toggleMenu() {
   document.getElementById("navbar").classList.toggle("active");
 }
@@ -1196,9 +1195,10 @@ document.querySelectorAll("#navbar a").forEach(link => {
     document.getElementById("navbar").classList.remove("active");
   });
 });
+
+// SEE MORE - Each card works independently
 document.querySelectorAll(".product-card").forEach(card => {
   const description = card.querySelector("p");
-
   if (!description) return;
 
   description.classList.add("product-description");
@@ -1208,22 +1208,26 @@ document.querySelectorAll(".product-card").forEach(card => {
   button.textContent = "SEE MORE +";
 
   button.addEventListener("click", () => {
-    const isHidden = !description.classList.contains("show");
-
-    description.classList.toggle("show", isHidden);
-    button.textContent = isHidden ? "SEE LESS −" : "SEE MORE +";
+    const isOpen = description.classList.toggle("show");
+    button.textContent = isOpen ? "SEE LESS −" : "SEE MORE +";
   });
 
   description.after(button);
 });
- document.querySelectorAll(".featured").forEach(section => {
+
+// PAGINATION - 6 cards per section
+document.querySelectorAll(".featured").forEach(section => {
   const grid = section.querySelector(".product-grid");
   if (!grid) return;
 
-  const cards = Array.from(grid.querySelectorAll(":scope > .product-card"));
-  if (cards.length <= 6) return;
+  const cards = Array.from(
+    grid.querySelectorAll(":scope > .product-card")
+  );
 
   const perPage = 6;
+
+  if (cards.length <= perPage) return;
+
   const pagination = document.createElement("div");
   pagination.className = "pagination";
   grid.after(pagination);
@@ -1231,7 +1235,8 @@ document.querySelectorAll(".product-card").forEach(card => {
   function showPage(page) {
     cards.forEach((card, index) => {
       card.style.display =
-        index >= (page - 1) * perPage && index < page * perPage
+        index >= (page - 1) * perPage &&
+        index < page * perPage
           ? "flex"
           : "none";
     });
@@ -1244,7 +1249,9 @@ document.querySelectorAll(".product-card").forEach(card => {
       const button = document.createElement("button");
       button.textContent = i;
 
-      if (i === page) button.classList.add("active");
+      if (i === page) {
+        button.classList.add("active");
+      }
 
       button.addEventListener("click", () => showPage(i));
       pagination.appendChild(button);
@@ -1252,8 +1259,9 @@ document.querySelectorAll(".product-card").forEach(card => {
   }
 
   showPage(1);
-}); 
+});
 </script>
+
 
 </body>
 </html>
