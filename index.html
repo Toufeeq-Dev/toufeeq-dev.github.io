@@ -1,10 +1,144 @@
+
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Men's Style Hub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Men's Style Hub | Menswear</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #080808;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background: #080808;
+      border-bottom: 1px solid #292929;
+      padding: 20px 6%;
+    }
+
+    .header-container {
+      max-width: 1300px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      text-align: center;
+      text-decoration: none;
+    }
+
+    .logo h1 {
+      color: #c9a44c;
+      font-size: 30px;
+      letter-spacing: 4px;
+    }
+
+    .logo p {
+      color: #fff;
+      font-size: 13px;
+      letter-spacing: 2px;
+      margin-top: 4px;
+    }
+
+    .logo span {
+      display: block;
+      color: #c9a44c;
+      font-size: 10px;
+      letter-spacing: 5px;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: 1px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #c9a44c;
+    }
+
+    .menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: #c9a44c;
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    @media (max-width: 768px) {
+      .header-container {
+        flex-wrap: wrap;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+
+      nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 22px;
+        padding-top: 25px;
+      }
+
+      nav.active {
+        display: flex;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Welcome to Men's Style Hub</h1>
-  <p>Your destination for men's fashion and style.</p>
+
+  <header>
+    <div class="header-container">
+
+      <a href="#" class="logo">
+        <h1>MSH</h1>
+        <p>MEN'S STYLE HUB</p>
+        <span>MENSWEAR</span>
+      </a>
+
+      <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+      <nav id="navbar">
+        <a href="#">HOME</a>
+        <a href="#">CASUAL</a>
+        <a href="#">FORMAL</a>
+        <a href="#">SHOES</a>
+        <a href="#">ACCESSORIES</a>
+        <a href="#">GROOMING</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navbar").classList.toggle("active");
+    }
+  </script>
+
 </body>
 </html>
