@@ -846,16 +846,14 @@ nav a:hover {
 /* SEE MORE DESCRIPTION */
 
 .product-description {
-  height: 65px;
-  min-height: 65px;
-  overflow-y: auto;
-  scrollbar-width: thin;
-  scrollbar-color: #c9a44c #222;
-  visibility: hidden;
+  display: none;
+  height: auto;
+  overflow: visible;
+  visibility: visible;
 }
 
 .product-description.show {
-  visibility: visible;
+  display: block;
 }
 
 .see-more-btn {
