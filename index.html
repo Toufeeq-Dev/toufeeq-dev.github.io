@@ -172,6 +172,90 @@ nav a:hover {
     max-width: 310px;
   }
 }
+  
+.collections {
+  padding: 80px 6%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+.section-heading small {
+  color: #c9a44c;
+  letter-spacing: 4px;
+  font-size: 11px;
+}
+
+.section-heading h2 {
+  font-size: 32px;
+  margin-top: 15px;
+  letter-spacing: 2px;
+}
+
+.collection-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.collection-card {
+  height: 330px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: end;
+  text-decoration: none;
+}
+
+.collection-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,.9));
+}
+
+.collection-card div {
+  position: relative;
+  padding: 22px;
+  color: white;
+}
+
+.collection-card h3 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.collection-card span {
+  color: #c9a44c;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.collection-card:hover {
+  opacity: .85;
+}
+
+@media(max-width: 768px) {
+  .collection-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .collection-card {
+    height: 240px;
+  }
+
+  .section-heading h2 {
+    font-size: 25px;
+  }
+      }
+  
 </style>
 </head>
 
@@ -217,6 +301,50 @@ nav a:hover {
   </div>
 </section>
 
+<section class="collections" id="collections">
+
+  <div class="section-heading">
+    <small>DISCOVER YOUR LOOK</small>
+    <h2>EXPLORE COLLECTIONS</h2>
+  </div>
+
+  <div class="collection-grid">
+
+    <a href="#casual" class="collection-card"
+    style="background-image:url('https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=700&q=85')">
+      <div>
+        <h3>Casual Wear</h3>
+        <span>EXPLORE →</span>
+      </div>
+    </a>
+
+    <a href="#formal" class="collection-card"
+    style="background-image:url('https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=700&q=85')">
+      <div>
+        <h3>Formal Wear</h3>
+        <span>EXPLORE →</span>
+      </div>
+    </a>
+
+    <a href="#shoes" class="collection-card"
+    style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85')">
+      <div>
+        <h3>Shoes</h3>
+        <span>EXPLORE →</span>
+      </div>
+    </a>
+
+    <a href="#accessories" class="collection-card"
+    style="background-image:url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85')">
+      <div>
+        <h3>Accessories</h3>
+        <span>EXPLORE →</span>
+      </div>
+    </a>
+
+  </div>
+  </section>
+  
 <script>
 function toggleMenu() {
   document.getElementById("navbar").classList.toggle("active");
