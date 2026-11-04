@@ -543,6 +543,44 @@ nav a:hover {
   }
     }
   
+/* BRAND FEATURES STRIP */
+
+.brand-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 40px 6%;
+  background: #101010;
+  border-top: 1px solid #292929;
+  border-bottom: 1px solid #292929;
+  text-align: center;
+}
+
+.feature-item span {
+  color: #c9a44c;
+  font-size: 27px;
+}
+
+.feature-item h3 {
+  font-size: 13px;
+  letter-spacing: 2px;
+  margin: 12px 0;
+}
+
+.feature-item p {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .brand-features {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 35px 8%;
+  }
+  }
+  
 </style>
 </head>
 
