@@ -841,6 +841,32 @@ nav a:hover {
 #top {
   scroll-margin-top: 120px;
 }
+
+/* SEE MORE DESCRIPTION */
+/* SEE MORE DESCRIPTION */
+
+.product-description {
+  height: 65px;
+  min-height: 65px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #c9a44c #222;
+  visibility: hidden;
+}
+
+.product-description.show {
+  visibility: visible;
+}
+
+.see-more-btn {
+  background: transparent;
+  border: none;
+  color: #c9a44c;
+  font-size: 10px;
+  letter-spacing: 1px;
+  margin: 10px 0;
+  cursor: pointer;
+}
 </style>
 </head>
 
@@ -952,26 +978,21 @@ nav a:hover {
   </div>
   </section>
   <section class="featured" id="formal-products">
-
   <div class="section-heading">
     <small>SMART & ELEGANT</small>
     <h2>FORMAL WEAR</h2>
   </div>
-
   <div class="product-grid">
-
   </div>
-<section class="featured" id="shoes-products">
+</section>
 
+<section class="featured" id="shoes-products">
   <div class="section-heading">
     <small>STEP UP YOUR STYLE</small>
     <h2>MEN'S SHOES</h2>
   </div>
-
   <div class="product-grid">
-
   </div>
-
 </section>
 <section class="featured" id="accessories-products">
 
@@ -993,7 +1014,6 @@ nav a:hover {
 
 </section>
     
-  </section>
   <section class="featured" id="casual-products">
 
   <div class="section-heading">
@@ -1102,6 +1122,8 @@ nav a:hover {
   </div>
 
 </footer> 
+
+  
 <script>
 
 function toggleMenu() {
@@ -1113,7 +1135,26 @@ document.querySelectorAll("#navbar a").forEach(link => {
     document.getElementById("navbar").classList.remove("active");
   });
 });
+document.querySelectorAll(".product-card").forEach(card => {
+  const description = card.querySelector("p");
 
+  if (!description) return;
+
+  description.classList.add("product-description");
+
+  const button = document.createElement("button");
+  button.className = "see-more-btn";
+  button.textContent = "SEE MORE +";
+
+  button.addEventListener("click", () => {
+    const isHidden = !description.classList.contains("show");
+
+    description.classList.toggle("show", isHidden);
+    button.textContent = isHidden ? "SEE LESS −" : "SEE MORE +";
+  });
+
+  description.after(button);
+});
   
 </script>
 
