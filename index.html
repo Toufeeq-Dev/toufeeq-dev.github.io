@@ -593,6 +593,74 @@ nav a:hover {
   }
 }
 
+/* PREMIUM PRODUCT CARD UPGRADE */
+
+.product-card {
+  position: relative;
+  overflow: hidden;
+  background: #111;
+  border: 1px solid #292929;
+  border-radius: 5px;
+  padding-bottom: 20px;
+  transition: all .35s ease;
+}
+
+.product-card:hover {
+  border-color: #c9a44c;
+  box-shadow: 0 10px 30px rgba(201,164,76,.10);
+  transform: translateY(-6px);
+}
+
+.product-card img {
+  display: block;
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-card h3 {
+  font-size: 15px;
+  color: #fff;
+  margin: 20px 10px 10px;
+}
+
+.product-card p {
+  min-height: 38px;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.product-btn {
+  display: block;
+  margin: 18px 15px 0;
+  padding: 14px 10px;
+  border-radius: 2px;
+  text-align: center;
+  transition: all .3s ease;
+}
+
+@media(max-width:768px) {
+  .product-card img {
+    height: 180px;
+  }
+
+  .product-card h3 {
+    font-size: 13px;
+  }
+
+  .product-btn {
+    margin-left: 8px;
+    margin-right: 8px;
+    padding: 12px 5px;
+    font-size: 10px;
+  }
+}
+  
 </style>
 </head>
 
@@ -715,28 +783,28 @@ nav a:hover {
       <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=85" alt="Men's T-shirt">
       <h3>Classic Men's T-Shirt</h3>
       <p>Simple and comfortable everyday style.</p>
-      <a href="#" class="product-btn">VIEW PRODUCT</a>
+      <a href="#" class="product-btn">SHOP NOW</a>
     </div>
 
     <div class="product-card">
       <img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=600&q=85" alt="Men's Shoes">
       <h3>Classic Men's Shoes</h3>
       <p>Upgrade your everyday footwear.</p>
-      <a href="#" class="product-btn">VIEW PRODUCT</a>
+      <a href="#" class="product-btn">SHOP NOW</a>
     </div>
 
     <div class="product-card">
       <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=85" alt="Men's Watch">
       <h3>Luxury Men's Watch</h3>
       <p>A timeless accessory for your look.</p>
-      <a href="#" class="product-btn">VIEW PRODUCT</a>
+      <a href="#" class="product-btn">SHOP NOW</a>
     </div>
 
     <div class="product-card">
       <img src="https://images.unsplash.com/photo-1624222247344-550fb8f5a9a3?auto=format&fit=crop&w=600&q=85" alt="Men's Belt">
       <h3>Classic Leather Belt</h3>
       <p>Complete your outfit with style.</p>
-      <a href="#" class="product-btn">VIEW PRODUCT</a>
+      <a href="#" class="product-btn">SHOP NOW</a>
     </div>
 
   </div>
