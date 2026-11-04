@@ -87,11 +87,18 @@ nav a:hover {
   align-items: center;
   padding: 70px 8%;
   background:
-    linear-gradient(90deg, #080808 5%, rgba(8,8,8,.85) 40%, rgba(8,8,8,.15)),
-    url("https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1800&q=85");
-  background-size: cover;
-  background-position: center;
-}
+  linear-gradient(
+    90deg,
+    rgba(5,5,5,0.95) 5%,
+    rgba(15,5,5,0.80) 45%,
+    rgba(20,5,5,0.30) 100%
+  ),
+  linear-gradient(
+    0deg,
+    rgba(180,35,0,0.35),
+    transparent 70%
+  ),
+  url("https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1800&q=85");
 
 .hero-content {
   max-width: 600px;
@@ -865,6 +872,27 @@ nav a:hover {
   margin: 10px 0;
   cursor: pointer;
 }
+/* PAGINATION */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 30px 0;
+}
+
+.pagination button {
+  background: #111;
+  color: #c9a44c;
+  border: 1px solid #c9a44c;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.pagination button.active {
+  background: #c9a44c;
+  color: #000;
+}
 </style>
 </head>
 
@@ -1153,7 +1181,43 @@ document.querySelectorAll(".product-card").forEach(card => {
 
   description.after(button);
 });
-  
+ document.querySelectorAll(".featured").forEach(section => {
+  const grid = section.querySelector(".product-grid");
+  if (!grid) return;
+
+  const cards = Array.from(grid.querySelectorAll(":scope > .product-card"));
+  if (cards.length <= 6) return;
+
+  const perPage = 6;
+  const pagination = document.createElement("div");
+  pagination.className = "pagination";
+  grid.after(pagination);
+
+  function showPage(page) {
+    cards.forEach((card, index) => {
+      card.style.display =
+        index >= (page - 1) * perPage && index < page * perPage
+          ? "flex"
+          : "none";
+    });
+
+    pagination.innerHTML = "";
+
+    const totalPages = Math.ceil(cards.length / perPage);
+
+    for (let i = 1; i <= totalPages; i++) {
+      const button = document.createElement("button");
+      button.textContent = i;
+
+      if (i === page) button.classList.add("active");
+
+      button.addEventListener("click", () => showPage(i));
+      pagination.appendChild(button);
+    }
+  }
+
+  showPage(1);
+}); 
 </script>
 
 </body>
