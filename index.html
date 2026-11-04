@@ -824,13 +824,20 @@ nav a:hover {
     font-size: 9px;
   }
   }
-  
+  #top,
+#casual,
+#formal,
+#shoes,
+#accessories,
+#products {
+  scroll-margin-top: 100px;
+}
 </style>
 </head>
 
 <body>
 
-<header>
+<header id="top">
   <div class="header-container">
 
     <a href="#" class="logo">
@@ -841,14 +848,16 @@ nav a:hover {
 
     <button class="menu-btn" onclick="toggleMenu()">☰</button>
 
-    <nav id="navbar">
-      <a href="#">HOME</a>
-      <a href="#">CASUAL</a>
-      <a href="#">FORMAL</a>
-      <a href="#">SHOES</a>
-      <a href="#">ACCESSORIES</a>
-      <a href="#">GROOMING</a>
-    </nav>
+    
+<nav id="navbar">
+  <a href="#top">HOME</a>
+  <a href="#casual">CASUAL</a>
+  <a href="#formal">FORMAL</a>
+  <a href="#shoes">SHOES</a>
+  <a href="#accessories">ACCESSORIES</a>
+  <a href="#products">GROOMING</a>
+</nav>
+
 
   </div>
 </header>
@@ -899,7 +908,7 @@ nav a:hover {
 
   <div class="collection-grid">
 
-    <a href="#casual" class="collection-card"
+    <a id="casual" href="#products" class="collection-card"
     style="background-image:url('https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=700&q=85')">
       <div>
         <h3>Casual Wear</h3>
@@ -907,7 +916,7 @@ nav a:hover {
       </div>
     </a>
 
-    <a href="#formal" class="collection-card"
+    <a id="formal" href="#products" class="collection-card"
     style="background-image:url('https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=700&q=85')">
       <div>
         <h3>Formal Wear</h3>
@@ -915,7 +924,7 @@ nav a:hover {
       </div>
     </a>
 
-    <a href="#shoes" class="collection-card"
+    <a id="shoes" href="#products" class="collection-card"
     style="background-image:url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=85')">
       <div>
         <h3>Shoes</h3>
@@ -923,7 +932,7 @@ nav a:hover {
       </div>
     </a>
 
-    <a href="#accessories" class="collection-card"
+    <a id="accessories" href="#products" class="collection-card"
     style="background-image:url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=700&q=85')">
       <div>
         <h3>Accessories</h3>
@@ -1027,10 +1036,17 @@ nav a:hover {
 
 </footer> 
 <script>
+
 function toggleMenu() {
   document.getElementById("navbar").classList.toggle("active");
 }
-  
+
+document.querySelectorAll("#navbar a").forEach(link => {
+  link.addEventListener("click", () => {
+    document.getElementById("navbar").classList.remove("active");
+  });
+});
+
   
 </script>
 
