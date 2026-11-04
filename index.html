@@ -256,6 +256,76 @@ nav a:hover {
   }
       }
   
+.featured {
+  padding: 80px 6%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.product-card {
+  background: #111;
+  border: 1px solid #292929;
+  padding-bottom: 22px;
+  text-align: center;
+  transition: .3s;
+}
+
+.product-card:hover {
+  border-color: #c9a44c;
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  font-size: 15px;
+  margin: 18px 10px 10px;
+}
+
+.product-card p {
+  color: #aaa;
+  font-size: 12px;
+  padding: 0 12px;
+  line-height: 1.6;
+}
+
+.product-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 20px;
+  background: #c9a44c;
+  color: #080808;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+@media(max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .product-card img {
+    height: 170px;
+  }
+
+  .product-card h3 {
+    font-size: 13px;
+  }
+}
+  
 </style>
 </head>
 
@@ -344,6 +414,46 @@ nav a:hover {
 
   </div>
   </section>
+  
+<section class="featured" id="products">
+
+  <div class="section-heading">
+    <small>HANDPICKED FOR YOU</small>
+    <h2>FEATURED PRODUCTS</h2>
+  </div>
+
+  <div class="product-grid">
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=600&q=85" alt="Men's T-shirt">
+      <h3>Classic Men's T-Shirt</h3>
+      <p>Simple and comfortable everyday style.</p>
+      <a href="#" class="product-btn">VIEW PRODUCT</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1614252369475-531eba835eb1?auto=format&fit=crop&w=600&q=85" alt="Men's Shoes">
+      <h3>Classic Men's Shoes</h3>
+      <p>Upgrade your everyday footwear.</p>
+      <a href="#" class="product-btn">VIEW PRODUCT</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=85" alt="Men's Watch">
+      <h3>Luxury Men's Watch</h3>
+      <p>A timeless accessory for your look.</p>
+      <a href="#" class="product-btn">VIEW PRODUCT</a>
+    </div>
+
+    <div class="product-card">
+      <img src="https://images.unsplash.com/photo-1624222247344-550fb8f5a9a3?auto=format&fit=crop&w=600&q=85" alt="Men's Belt">
+      <h3>Classic Leather Belt</h3>
+      <p>Complete your outfit with style.</p>
+      <a href="#" class="product-btn">VIEW PRODUCT</a>
+    </div>
+
+  </div>
+</section>
   
 <script>
 function toggleMenu() {
