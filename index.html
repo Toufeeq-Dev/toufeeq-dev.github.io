@@ -857,14 +857,11 @@ nav a:hover {
 /* SEE MORE DESCRIPTION */
 
 .product-description {
-  display: none;
-  height: auto;
-  overflow: visible;
-  visibility: visible;
+  display: none !important;
 }
 
 .product-description.show {
-  display: block;
+  display: block !important;
 }
 
 .see-more-btn {
@@ -1207,9 +1204,13 @@ document.querySelectorAll(".product-card").forEach(card => {
   button.className = "see-more-btn";
   button.textContent = "SEE MORE +";
 
-  button.addEventListener("click", () => {
-    const isOpen = description.classList.toggle("show");
-    button.textContent = isOpen ? "SEE LESS −" : "SEE MORE +";
+  button.addEventListener("click", function() {
+    description.classList.toggle("show");
+
+    button.textContent =
+      description.classList.contains("show")
+        ? "SEE LESS −"
+        : "SEE MORE +";
   });
 
   description.after(button);
